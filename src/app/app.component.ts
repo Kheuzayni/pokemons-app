@@ -21,7 +21,7 @@ export class AppComponent implements OnInit{
   // }
 
   selectPokemon(event: MouseEvent){
-    const index: number= +(event.target as HTMLInputElement).value;          //+ permet de convertir la value en nombre
+    const index: number= +(event.target as HTMLInputElement).value;          //signe + permet de convertir la value en nombre
     console.log (`Vous avez cliqué sur le pokomon ${this.pokemonList[index].name}`);
   }
   
