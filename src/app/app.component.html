@@ -5,7 +5,6 @@
 
 <!-- <input type="number" (click)="selectPokemonNumber($event)"/> <br>
 
-
 <p>Deuxieme methode</p>
 
 <input type="text" #input (keyup)="0"/>
@@ -15,8 +14,6 @@
 
 <input type="number" #input (keyup.enter)="selectPokemonTrois(input.value)"/>
 <p>{{pokemonSelected?.name}}</p> -->
-
-
 
 <!-- Afficher sur l'interface -->
 <p>Quatrieme methode</p> 
@@ -29,6 +26,10 @@
     Aucun pokemon trouvé pour  le moment.
 </p>
 
+<p *ngFor="let pokemon of pokemonList">
+    {{ pokemon.name}}
+</p>
+<!-- 
 <p>{{ pokemonList[0].name }}</p>
 <p>{{ pokemonList[1].name }}</p>
 <p>{{ pokemonList[2].name }}</p>
@@ -40,4 +41,4 @@
 <p>{{ pokemonList[8].name }}</p>
 <p>{{ pokemonList[9].name }}</p>
 <p>{{ pokemonList[10].name }}</p>
-<p>{{ pokemonList[11].name }}</p>
+<p>{{ pokemonList[11].name }}</p> -->
