@@ -3,7 +3,18 @@
 <h2>Liste de Pokémons</h2>
 <p>Test paragraphe</p>
 
-<input type="number" (click)="selectPokemonNumber($event)"/>
+<!-- <input type="number" (click)="selectPokemonNumber($event)"/> <br>
+
+
+<p>Deuxieme methode</p>
+
+<input type="text" #input (keyup)="0"/>
+<p>{{input.value}}</p>
+
+<p>Troisieme methode</p> -->
+
+<input type="number" #input (keyup)="selectPokemonTrois(input.value)"/>
+<p>{{pokemonSelected?.name}}</p>
 
 <p>{{ pokemonList[0].name }}</p>
 <p>{{ pokemonList[1].name }}</p>
