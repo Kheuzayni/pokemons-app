@@ -11,10 +11,23 @@
 <input type="text" #input (keyup)="0"/>
 <p>{{input.value}}</p>
 
-<p>Troisieme methode</p> -->
+<p>Troisieme methode</p> 
 
-<input type="number" #input (keyup)="selectPokemonTrois(input.value)"/>
-<p>{{pokemonSelected?.name}}</p>
+<input type="number" #input (keyup.enter)="selectPokemonTrois(input.value)"/>
+<p>{{pokemonSelected?.name}}</p> -->
+
+
+
+<!-- Afficher sur l'interface -->
+<p>Quatrieme methode</p> 
+
+<input type="number" #input (keyup.enter)="selectPokemonTrois(input.value)"/>
+<p *ngIf="pokemonSelected">
+    Vous avez cliqué sur le pokomon: {{ pokemonSelected.name}}
+</p>
+<p *ngIf="!pokemonSelected">
+    Aucun pokemon trouvé pour  le moment.
+</p>
 
 <p>{{ pokemonList[0].name }}</p>
 <p>{{ pokemonList[1].name }}</p>
