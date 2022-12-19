@@ -1,7 +1,4 @@
-<h1>Bienvenue Cheikh!</h1>
-
-<h2>Liste de Pokémons</h2>
-<p>Test paragraphe</p>
+<h1 class="center">Liste pokémons !</h1>
 
 <!-- <input type="number" (click)="selectPokemonNumber($event)"/> <br>
 
@@ -13,32 +10,50 @@
 <p>Troisieme methode</p> 
 
 <input type="number" #input (keyup.enter)="selectPokemonTrois(input.value)"/>
-<p>{{pokemonSelected?.name}}</p> -->
+<p>{{pokemonSelected?.name}}</p>
 
-<!-- Afficher sur l'interface -->
+Afficher sur l'interface
 <p>Quatrieme methode</p> 
 
 <input type="number" #input (keyup.enter)="selectPokemonTrois(input.value)"/>
-<p *ngIf="pokemonSelected">
-    Vous avez cliqué sur le pokomon: {{ pokemonSelected.name}}
-</p>
-<p *ngIf="!pokemonSelected">
-    Aucun pokemon trouvé pour  le moment.
-</p>
 
-<p *ngFor="let pokemon of pokemonList">
-    {{ pokemon.name}}
-</p>
-<!-- 
-<p>{{ pokemonList[0].name }}</p>
-<p>{{ pokemonList[1].name }}</p>
-<p>{{ pokemonList[2].name }}</p>
-<p>{{ pokemonList[3].name }}</p>
-<p>{{ pokemonList[4].name }}</p>
-<p>{{ pokemonList[5].name }}</p>
-<p>{{ pokemonList[6].name }}</p>
-<p>{{ pokemonList[7].name }}</p>
-<p>{{ pokemonList[8].name }}</p>
-<p>{{ pokemonList[9].name }}</p>
-<p>{{ pokemonList[10].name }}</p>
-<p>{{ pokemonList[11].name }}</p> -->
+    <p *ngIf="pokemonSelected">
+    Vous avez cliqué sur le pokomon: {{ pokemonSelected.name}}
+    </p>
+    <p *ngIf="!pokemonSelected">
+        Aucun pokemon trouvé pour  le moment.
+    </p>
+        <p *ngFor="let pokemon of pokemonList">
+        {{ pokemon.name}}
+    </p>
+    
+    <p>{{ pokemonList[0].name }}</p>
+    <p>{{ pokemonList[1].name }}</p>
+    <p>{{ pokemonList[2].name }}</p>
+    <p>{{ pokemonList[3].name }}</p>
+    <p>{{ pokemonList[4].name }}</p>
+    <p>{{ pokemonList[5].name }}</p>
+    <p>{{ pokemonList[6].name }}</p>
+    <p>{{ pokemonList[7].name }}</p>
+    <p>{{ pokemonList[8].name }}</p>
+    <p>{{ pokemonList[9].name }}</p>
+    <p>{{ pokemonList[10].name }}</p>
+    <p>{{ pokemonList[11].name }}</p> -->
+
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
+                <div class=" card horizontal">
+                    <div class="card image">
+                        <img [src]="pokemon.picture">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p>{{pokemon.name}}</p>
+                                <p> <small> {{pokemon.created}} </small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
