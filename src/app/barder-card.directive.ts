@@ -1,21 +1,27 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[pkmnBarderCard]'
+  selector: '[pkmnBorderCard]'
 })
 export class BarderCardDirective {
 
-  constructor( private el:ElementRef) {
-    this.setHeight(180);
-    this.setBorder(`#f5F5F5`);
+  private initialColor: string = '#f5F5F5';
+  private defaultColor: string = '#009688';
+  private defaultHeight: number = 180;
+
+  constructor( private el: ElementRef) {
+    this.setHeight(this.defaultHeight);
+    this.setBorder(this.initialColor);
    }
 
+   @Input('pkmBorderCard') borderColor: string;
+
    @HostListener('mouseenter') onMouseEnter() {
-    this.setBorder(`#009688`);
+    this.setBorder(this.borderColor || this.defaultColor);
    }
 
    @HostListener('mouseleave') onMouseLeave() {
-    this.setBorder(`#f5F5F5`);
+    this.setBorder(this.initialColor);
    }
 
 
