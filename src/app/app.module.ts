@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BarderCardDirective } from './barder-card.directive';
+import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarderCardDirective
+    BarderCardDirective,
+    PokemonTypeColorPipe
   ],
   imports: [
     BrowserModule,
