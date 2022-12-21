@@ -1,4 +1,4 @@
-<h1 class="center">Liste pokémons !</h1>
+<h1 class="center">Liste des pokémons !</h1>
 
 <!-- <input type="number" (click)="selectPokemonNumber($event)"/> <br>
 
@@ -50,7 +50,7 @@ Afficher sur l'interface
                 <div class="card-stacked">
                     <div class="card-content">
                         <p>{{pokemon.name}}</p>
-                        <p><small> {{pokemon.created | date}} </small></p>
+                        <p><small> {{pokemon.created | date :'dd/MM/YYYY'}} </small></p>
                         <span *ngFor="let type of pokemon.types" class="{{type | pokemonTypeColor}}">
                             {{type}}
                         </span>
