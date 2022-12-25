@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { POKEMONS } from '../mock-pokemon-list';
 import { Pokemon } from '../pokemon';
 
@@ -12,7 +12,7 @@ export class DetailPokemonComponent {
   pokemon : Pokemon|undefined;
 
 //Injecter method ActivatedRoute pour rendre le service route disponible dans le composnat
-  constructor(private route : ActivatedRoute){}
+  constructor(private route : ActivatedRoute, private router : Router){}
 
   ngOnInit(){
 
@@ -24,8 +24,12 @@ export class DetailPokemonComponent {
 //Si l'id recherché se trouve dans la liste des pokemons alors on l'attriibue au pokemmon qui le correspondant
     if (pokemonId){
       this.pokemon = this.pokemonList.find(pokemon => pokemon.id == +pokemonId);
-    }
+    }   
 
   }
+
+  goToPokomenList(){
+    this.router.navigate(['/pokemons']);
+    }
 
 }
