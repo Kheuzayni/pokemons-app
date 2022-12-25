@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BarderCardDirective } from './barder-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
+import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
+import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarderCardDirective,
-    PokemonTypeColorPipe
+    PokemonTypeColorPipe,
+    ListPokemonComponent,
+    DetailPokemonComponent
   ],
   imports: [
     BrowserModule,
