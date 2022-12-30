@@ -3,7 +3,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 @Directive({
   selector: '[pkmnBorderCard]'
 })
-export class BarderCardDirective {
+export class BorderCardDirective {
 
   private initialColor: string = '#f5F5F5';
   private defaultColor: string = '#009688';
