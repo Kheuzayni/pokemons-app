@@ -6,7 +6,17 @@ import { Pokemon } from './pokemon';
   providedIn: 'root'
 })
 export class PokemonService {
+
   getPokemonList(): Pokemon[] {
     return POKEMONS;
-}
+  }
+
+  getPokemonById(pokemonId: number): Pokemon|undefined {
+    return POKEMONS.find(pokemon => pokemon.id === pokemonId);
+  }
+
+  getPokemonTypeList(): string []{
+    return ['planete','combat', 'feu', 'war', 'Fée','etc'];
+  }
+
 }
