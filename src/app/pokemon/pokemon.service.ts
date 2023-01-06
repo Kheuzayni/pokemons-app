@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class PokemonService {
 
   getPokemonList(): Pokemon[] {
@@ -12,11 +11,11 @@ export class PokemonService {
   }
 
   getPokemonById(pokemonId: number): Pokemon|undefined {
-    return POKEMONS.find(pokemon => pokemon.id === pokemonId);
+    return POKEMONS.find(pokemon => pokemon.id == pokemonId);
   }
 
   getPokemonTypeList(): string []{
-    return ['planete','combat', 'feu', 'war', 'Fée','etc'];
+    return ['Planete','Feu','Eau','Insecte','Normal', 'Electrik', 'Poison', 'Fée', 'Vol', 'combat', 'Psy'];
   }
 
 }
