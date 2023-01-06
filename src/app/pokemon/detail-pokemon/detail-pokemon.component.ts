@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
@@ -7,7 +7,7 @@ import { PokemonService } from '../pokemon.service';
   selector: 'app-detail-pokemon',
   templateUrl: './detail-pokemon.component.html'
 })
-export class DetailPokemonComponent {
+export class DetailPokemonComponent implements OnInit {
   pokemonList : Pokemon[];
   pokemon : Pokemon|undefined;
 
