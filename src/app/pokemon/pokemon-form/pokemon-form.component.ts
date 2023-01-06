@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-form',
-  template: `
-    <p>
-      pokemon-form works!
-    </p>
-  `,
+  templateUrl: './pokemon-form.component.html',
   styles: [
   ]
 })
