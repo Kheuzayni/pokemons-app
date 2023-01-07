@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon-form',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonFormComponent implements OnInit {
 
-  constructor(){}
+  constructor(private pokemonService : PokemonService){}
+
+  types: string[] ;
 
   ngOnInit() {
-   //pokemonTypeList 
+    this.types = this.pokemonService.getPokemonTypeList();
   }
 
   hasType() {
