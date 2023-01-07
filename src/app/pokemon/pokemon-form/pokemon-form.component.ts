@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-form',
@@ -6,6 +6,26 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class PokemonFormComponent {
+export class PokemonFormComponent implements OnInit {
+
+  constructor(){}
+
+  ngOnInit() {
+   //pokemonTypeList 
+  }
+
+  hasType() {
+
+  }
+
+  selectType() {
+
+  }
+
+  onSubmit() {
+    
+  }
+
+
 
 }
