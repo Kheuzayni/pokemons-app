@@ -6,8 +6,7 @@ import { PokemonService } from '../pokemon.service';
 @Component({
   selector: 'app-pokemon-form',
   templateUrl: './pokemon-form.component.html',
-  styles: [
-  ]
+  styleUrls: ['./pokemon-form.component.css]
 })
 export class PokemonFormComponent implements OnInit {
 
@@ -40,6 +39,20 @@ export class PokemonFormComponent implements OnInit {
       const index = this.pokemon.types.indexOf(type);
       this.pokemon.types.splice(index, 1);
     }
+  }
+
+  //Cocheer les cases
+  isTypesValid(type : string) : boolean {
+
+    if (this.pokemon.types.length == 1 && this.hasType(type)){
+      return false;
+    }
+
+    if (this.pokemon.types.length > 2 && !this.hasType(type)){
+      return false;
+    }
+
+    return true;
   }
 
   //Soumettre le formulaire et le rediriger vers le pokemon modifié
