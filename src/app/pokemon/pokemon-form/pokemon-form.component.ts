@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Pokemon } from '../pokemon';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon-form',
@@ -8,22 +11,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonFormComponent implements OnInit {
 
-  constructor(){}
+  @Input() pokemon: Pokemon
+
+  constructor(
+    private pokemonService : PokemonService,
+    private router: Router
+    ){}
+
+  types: string[] ;
 
   ngOnInit() {
-   //pokemonTypeList 
+    //initialisation à tous les pokemons disponible dans le projet
+    this.types = this.pokemonService.getPokemonTypeList();
   }
 
-  hasType() {
-
+  //Vérifier si un pokemon a un type ou pas ce qui permet de cocher les cases à l'initialisation du formulaire
+  hasType(type: string): boolean {
+    return this.pokemon.types.includes(type);
   }
 
-  selectType() {
+  //Mise à jour avec l'interaction des cases à coché
+  selectType($event: Event, type:string) {
+    const isChecked : boolean = ($event.target as HTMLInputElement).checked;
 
+    if (isChecked) {
+      this.pokemon.types.push(type);
+    }else {
+      const index = this.pokemon.types.indexOf(type);
+      this.pokemon.types.splice(index, 1);
+    }
   }
 
+  //Soumettre le formulaire et le rediriger vers le pokemon modifié
   onSubmit() {
-    
+    console.log('formulaire soumis');
+    this.router.navigate(['/pokemon', this.pokemon.id]);
   }
 
 
