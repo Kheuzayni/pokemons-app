@@ -2,6 +2,8 @@ import { sequence } from '@angular/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -16,6 +18,7 @@ import { PokemonModule } from './pokemon/pokemon.module';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     PokemonModule,
     AppRoutingModule
   ],
@@ -23,7 +26,3 @@ import { PokemonModule } from './pokemon/pokemon.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-//Note : Programmation reaactive = programmation avec des flux de données asynchrone 
-
-//Flux  : sequence d'évènement en cours qui sont ordonnés dans le temps
