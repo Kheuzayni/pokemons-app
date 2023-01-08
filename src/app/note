@@ -1,0 +1,15 @@
+//Note :
+
+//Note : Programmation reaactive = programmation avec des flux de données asynchrone 
+
+//Flux  : sequence d'évènement en cours qui sont ordonnés dans le temps
+// Par exemple si un utilisateur fait plusieurs cliques sur n bouton alors la succession des cliques peut etre modeliser comme étant des flux d'évènement
+//3types de réponses de flux : 
+//       1. Une fonction peut traiter les différents valeurs de la réponse (nombre, valeur, tableau, etc.)
+//       2. Une fonction peut traiter le cas d'erreur
+//       2. Une fonction peut traiter le signal de fin : c'est-à-dire le flux est terminé et il y a plus d'événement
+// RxJs : librairie programmation reactive
+
+
+//Observable
+
