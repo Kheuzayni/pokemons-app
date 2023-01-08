@@ -22,3 +22,5 @@ import { PokemonModule } from './pokemon/pokemon.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+//Note : Programmation reaactive = programmation avec des flux de données asynchrone 
