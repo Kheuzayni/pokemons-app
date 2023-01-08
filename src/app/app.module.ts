@@ -1,3 +1,4 @@
+import { sequence } from '@angular/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,3 +25,5 @@ import { PokemonModule } from './pokemon/pokemon.module';
 export class AppModule { }
 
 //Note : Programmation reaactive = programmation avec des flux de données asynchrone 
+
+//Flux  : sequence d'évènement en cours qui sont ordonnés dans le temps
