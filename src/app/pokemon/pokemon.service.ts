@@ -15,10 +15,10 @@ export class PokemonService {
   // }
   getPokemonList(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>('api/pokemons').pipe( //api/pokemons: route de l'api
-      tap((response) => console.table(response)),
-      catchError((error) => {
+      tap((pokemonList) => console.table(pokemonList)),         //A chaque fois on log la réponse
+      catchError((error) => {                             //S'il y a Erreur on le log
         console.log(error);
-        return of([]);        
+        return of([]);                                    //retourné un tableau de pokemon vide pour empecher que l'appli crache
       })
     )
   }
