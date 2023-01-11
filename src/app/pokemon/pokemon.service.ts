@@ -13,6 +13,12 @@ export class PokemonService {
   // getPokemonList(): Pokemon[] {
   //   return POKEMONS;
   // }
+
+  // getPokemonById(pokemonId: number): Pokemon|undefined {
+  //   return POKEMONS.find(pokemon => pokemon.id == pokemonId);
+  // }
+
+  ///////////////////////API Methods
   getPokemonList(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>('api/pokemons').pipe( //api/pokemons: route de l'api
       tap((pokemonList) => console.table(pokemonList)),         //A chaque fois on log la réponse
@@ -23,10 +29,6 @@ export class PokemonService {
     )
   }
 
-  // getPokemonById(pokemonId: number): Pokemon|undefined {
-  //   return POKEMONS.find(pokemon => pokemon.id == pokemonId);
-  // }
-
   getPokemonById(pokemonId: number): Observable <Pokemon|undefined> {
     return this.http.get<Pokemon>('api/pokemonns/${pokemonId').pipe(
       tap((pokemonList) => console.table(pokemonList)),
@@ -36,9 +38,18 @@ export class PokemonService {
       })
     )
   }
+ //////////////////////API Methods
+
+  //Des fonctions de refactoring API methods
+
+  private log(){}
+
+  private hadleError(){}
+  
+
+    //Des fonctions de refactoring API methods
 
   getPokemonTypeList(): string []{
-    return ['Planete','Feu','Eau','Insecte','Normal', 'Electrik', 'Poison', 'Fée', 'Vol', 'combat', 'Psy'];
-  }
-
+      return ['Planete','Feu','Eau','Insecte','Normal', 'Electrik', 'Poison', 'Fée', 'Vol', 'combat', 'Psy'];
+    }
 }
