@@ -23,8 +23,13 @@ export class DetailPokemonComponent implements OnInit {
     const pokemonId : string|null = this.route.snapshot.paramMap.get('id');
 
 //Si l'id recherché se trouve dans la liste des pokemons alors on l'attriibue au pokemmon qui le correspondant
+
     if (pokemonId){
-      this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
+      
+      //this.pokemon = this.pokemonService.getPokemonById(+pokemonId);
+
+      //Avec l'api
+      this.pokemonService.getPokemonById(+pokemonId).subscribe(pokemon => this.pokemon = pokemon);
     }   
 
   }
