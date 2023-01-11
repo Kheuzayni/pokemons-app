@@ -82,7 +82,7 @@ export class PokemonService {
 
     //Supprimer Pokemon
     deletePokemonById(pokemonId: number): Observable <null>{
-      return this.http.delete(`api/pokemons, ${pokemonId}`).pipe(
+      return this.http.delete(`api/pokemons/${pokemonId}`).pipe(
         tap((response) => this.log(response)),
         catchError((error) => this.handleError(error, null))
       ); 
