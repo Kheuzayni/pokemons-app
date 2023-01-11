@@ -62,9 +62,14 @@ export class PokemonService {
         })
       )
     }
-    private log(){}
+    private log(response: Pokemon[]|Pokemon|undefined){
+      console.table(response);
+    }
 
-    private hadleError(){}
+    private hadleError(error: Error, errorValue: any){
+      console.error(error);
+      return of(errorValue);
+    }
   
   //////Des fonctions de refactoring API methods
 
