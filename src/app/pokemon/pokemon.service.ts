@@ -80,6 +80,9 @@ export class PokemonService {
       );
     }
 
+    //Supprimer Pokemon
+    deletePokemonById(){}
+
     private log(response: Pokemon[]|Pokemon|undefined|any){
       console.table(response);
     }
