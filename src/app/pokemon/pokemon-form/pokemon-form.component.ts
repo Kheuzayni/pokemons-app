@@ -65,11 +65,7 @@ export class PokemonFormComponent implements OnInit {
   //Avec l'api
   onSubmit() {
     this.pokemonService.updatePokemon(this.pokemon).
-    subscribe((pokemon) => {
-      if(pokemon){
-        this.router.navigate(['/pokemon', pokemon.id]);
-      }
-    })
+    subscribe(() =>  this.router.navigate(['/pokemon', this.pokemon.id]));
     
   }
 
