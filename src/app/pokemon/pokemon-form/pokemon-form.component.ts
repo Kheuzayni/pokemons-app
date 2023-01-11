@@ -55,10 +55,22 @@ export class PokemonFormComponent implements OnInit {
     return true;
   }
 
-  //Soumettre le formulaire et le rediriger vers le pokemon modifié
+//Soumettre le formulaire et le rediriger vers le pokemon modifié
+  //Avant l'api
+  // onSubmit() {
+  //   console.log('formulaire soumis');
+  //   this.router.navigate(['/pokemon', this.pokemon.id]);
+  // }
+
+  //Avec l'api
   onSubmit() {
-    console.log('formulaire soumis');
-    this.router.navigate(['/pokemon', this.pokemon.id]);
+    this.pokemonService.updatePokemon(this.pokemon).
+    subscribe((pokemon) => {
+      if(pokemon){
+        this.router.navigate(['/pokemon', pokemon.id]);
+      }
+    })
+    
   }
 
 
