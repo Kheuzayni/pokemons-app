@@ -23,8 +23,18 @@ export class PokemonService {
     )
   }
 
-  getPokemonById(pokemonId: number): Pokemon|undefined {
-    return POKEMONS.find(pokemon => pokemon.id == pokemonId);
+  // getPokemonById(pokemonId: number): Pokemon|undefined {
+  //   return POKEMONS.find(pokemon => pokemon.id == pokemonId);
+  // }
+
+  getPokemonById(pokemonId: number): Observable <Pokemon|undefined> {
+    return this.http.get<Pokemon>('api/pokemonns/${pokemonId').pipe(
+      tap((pokemonList) => console.table(pokemonList)),
+      catchError((error) => { 
+        console.log(error);
+        return of(undefined);
+      })
+    )
   }
 
   getPokemonTypeList(): string []{
