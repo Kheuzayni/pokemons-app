@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-add-pokemon',
   template: `
-    <p>
-      add-pokemon works!
-    </p>
+    <h2 class="center">Ajouter un pokemon</h2>
   `,
   styles: [
   ]
