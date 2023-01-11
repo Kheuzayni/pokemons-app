@@ -81,7 +81,9 @@ export class PokemonService {
     }
 
     //Supprimer Pokemon
-    deletePokemonById(){}
+    deletePokemonById(){
+      return 
+    }
 
     private log(response: Pokemon[]|Pokemon|undefined|any){
       console.table(response);
