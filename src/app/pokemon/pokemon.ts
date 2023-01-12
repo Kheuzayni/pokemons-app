@@ -7,7 +7,7 @@ export class Pokemon {
     created: Date;
 
     constructor (
-      name: string = 'Enter name....',
+      name: string = 'Enter un nom de pokemon....',
       hp: number = 100,
       cp: number = 10, 
       picture: string = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/xxx.png', 
