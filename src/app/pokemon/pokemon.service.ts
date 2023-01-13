@@ -100,6 +100,15 @@ export class PokemonService {
       ); 
     }
 
+    //Recherche pokemon
+    searchPokemonList(term: string) : Observable <Pokemon[]>{
+      return this.http.get<Pokemon[]>(`api/pokemons/?name=${term}`).pipe(
+        tap((response) => this.log(response)),
+        catchError((error) => this.handleError(error, null))
+      );
+    }
+
+
     private log(response: Pokemon[]|Pokemon|undefined|any){
       console.table(response);
     }
