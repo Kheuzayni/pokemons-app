@@ -11,17 +11,18 @@ import { PokemonService } from '../pokemon.service';
 export class PokemonFormComponent implements OnInit {
 
   @Input() pokemon: Pokemon
+  types: string[] ;
+  isAddForm: boolean;
 
   constructor(
     private pokemonService : PokemonService,
     private router: Router
     ){}
 
-  types: string[] ;
-
   ngOnInit() {
     //initialisation à tous les pokemons disponible dans le projet
     this.types = this.pokemonService.getPokemonTypeList();
+    this.isAddForm = this.router.url.includes('add');
   }
 
   //Vérifier si un pokemon a un type ou pas ce qui permet de cocher les cases à l'initialisation du formulaire
@@ -64,8 +65,17 @@ export class PokemonFormComponent implements OnInit {
 
   //Avec l'api
   onSubmit() {
-    this.pokemonService.updatePokemon(this.pokemon).
-    subscribe(() =>  this.router.navigate(['/pokemon', this.pokemon.id]));
+
+    if (this.isAddForm){
+      this.pokemonService.addPokemon(this.pokemon).
+      subscribe(() =>  this.router.navigate(['/pokemon', this.pokemon.id]));
+    }
+    
+    else {
+      this.pokemonService.updatePokemon(this.pokemon).
+      subscribe(() =>  this.router.navigate(['/pokemon', this.pokemon.id]));
+    }
+    
     
   }
 
