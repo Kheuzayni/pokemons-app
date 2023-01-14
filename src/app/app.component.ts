@@ -8,16 +8,6 @@ import { Component} from '@angular/core';
   export class AppComponent {}
 
 
-
-
-
-
-
-
-
-
-
-
 // export class AppComponent implements OnInit{
 
 //   pokemonList: Pokemon[] = POKEMONS;
