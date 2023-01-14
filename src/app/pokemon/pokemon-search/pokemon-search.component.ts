@@ -11,7 +11,7 @@ import { Pokemon } from '../pokemon';
 })
 export class PokemonSearchComponent implements OnInit {
 
-  searchTerms = new Subject <string>();
+  searchTerms = new Subject<string>();
 
   pokemons$: Observable<Pokemon[]>;
 
@@ -21,7 +21,10 @@ export class PokemonSearchComponent implements OnInit {
     
   }
 
-  search( term : string) {}
+  search( term : string) {
+    //Pousser le terme de recherche qu'il a tapé
+    this.searchTerms.next(term);
+  }
 
   goToDetail(pokemon: Pokemon){
     const link = ['/pokemon', pokemon.id];
