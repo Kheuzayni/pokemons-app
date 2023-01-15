@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
   ]
 })
 export class LoginComponent implements OnInit{
-  message: string = 'Vous êtes déconnecté. (baye/baye)';
+  message: string = 'Bonjour Baye, Vous êtes déconnecté. (baye/baye)';
     name: string;
     password: string;
     auth: AuthService;
